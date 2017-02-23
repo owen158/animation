@@ -140,7 +140,6 @@
             this.posterItems= poster.find("li.poster-item")
             this.posterFirstItem = this.posterItems.first();
             this.posterlast=this.posterItems.last();
-
 //            默认设置参数
             this.setting = {
                 'width':1000,//宽度
@@ -152,9 +151,6 @@
                 'wertcalAlign':'middle'
             };
             $.extend(this.setting,this.getSetting());
-//            console.log(this.setting);
-            //this.getSetting()
-//            console.log(this.getSetting());
 //            设置配置参数
             this.setSettingValue();
             this.setPosterPos();
@@ -235,8 +231,7 @@
                         left:fixoffsetleft+(++i)*gap-rw,
                         top:self.setVertucalAlign(rh)
                     })
-//                    console.log((self.setting.height-rh)/2)
-                })
+//                    console.log((self.setting.height-rh)/2                })
                 var lw =  rightslice.last().width(),
                     lh=rightslice.last().height(),
                     oloop=Math.floor(this.posterItems.size()/2);
@@ -300,7 +295,6 @@
                         zIndex: Math.floor(this.posterItems.size()/2),
                     }
                 );
-//                console.log(w)
             },
 //            获取人工配置参数
             getSetting:function () {
@@ -311,7 +305,6 @@
                 }else {
                     return {};
                 }
-//                return setting;
             }
         };
         Carousel.init=function (posters) {//初始化
@@ -320,7 +313,7 @@
                 new _this_($(this))
             })
         }
-        window["Carousel"]=Carousel;
+        jQuery["Carousel"]=Carousel;
     })(jQuery)
 </script>
 <script src="js/Share.js"></script>
@@ -338,7 +331,7 @@
         }
     });
     $(function (){
-        Carousel.init($('.J_Poster'))
+        jQuery["Carousel"].init($('.J_Poster'))
     })
 
 </script>
